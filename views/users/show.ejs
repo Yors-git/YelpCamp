@@ -1,0 +1,29 @@
+<%- include("../partials/header") %> 
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= `${user.firstName}  ${user.lastName}` %> </h1>
+        <div class="thumbnail">
+            <img id="avt" src="<%= user.avatar %> " alt="user profile image">
+            <div class="caption"><a href="mailto:<%= user.email %> "><%= user.email %></a></div>
+        </div>
+        <div>
+            Bacon ipsum dolor amet beef pork belly doner, meatball bresaola boudin buffalo pig jerky chuck. Pork belly alcatra pork meatball. Strip steak chislic pig, prosciutto sausage hamburger biltong turducken andouille porchetta flank fatback frankfurter meatball. Picanha burgdoggen meatball, pork belly ground round t-bone short ribs jowl tail pig corned beef. Biltong shoulder tail, venison tongue turkey beef ribs ham frankfurter corned beef. Venison andouille chicken, capicola tail shankle tenderloin. Beef ribs cupim tail flank beef.
+        </div>
+    </div>
+    <div class="col-md-3">
+        <h3><%= user.username %>'s Campgrounds:</h3>
+        <ul>
+            <% campgrounds.forEach(element => { %>
+                <li>
+                    <a href="/campgrounds/<%= element.id %> "><%= element.name %></a>
+                    <div class="thumbnail">
+                        <img src="<%= element.image %> " alt="">
+                    </div>
+                </li>
+            <% }) %> 
+        </ul>
+    </div>
+</div>
+
+<%- include("../partials/footer") %> 

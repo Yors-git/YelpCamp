@@ -1,0 +1,53 @@
+<%- include("../partials/header") %> 
+
+<header class="jumbotron">
+    <div class="container">
+        <h1><i class="fas fa-campground"></i> Welcome to YelpCamp!</h1>
+        <p>View our hand-picked campgrounds from all over the world</p>
+        <p>
+            <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+        </p> 
+    </div>
+</header>
+
+<div>
+    <div class="container col-md-6">
+        <div class=""></div>
+                <% if(noMatch !== null) { %>
+                    <div class="well">
+                    <h3><%= noMatch %></h3>
+                    <p>
+                        <form action="/campgrounds" method="GET" class="">
+                            <div class="input-group mb-3">
+                                <input type="text" name="search" class="form-control" placeholder="Campground search..." aria-label="Campground search...">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" value="Search" type="submit" id="button-addon2">Search</button>
+                                </div>
+                          </div>
+                        </form>
+                            
+                    </p>
+                    <p class="text-center">or</p>
+                    <p class="text-center"><a class="text-center" href="/campgrounds">Show all campgrounds</a></p>
+                    
+                    </div>
+                <% } %>
+        </div>
+    </div>
+    <div class="row">
+        <% campgrounds.forEach(el => { %>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card mb-4 text-center" >  
+                        <img src="<%= el.image %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= el.name %></h5>
+                        <p></p>
+                        <a class="btn btn-primary" href="/campgrounds/<%= el._id %> ">More Info</a>
+                        </div>
+                    </div>
+                </div>
+        <% }); %> 
+    </div>
+</div>
+
+<%- include("../partials/footer") %> 
