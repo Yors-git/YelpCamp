@@ -6,6 +6,10 @@ This app lets the user see different camping sites added by her or other users, 
 
 ![img](./ScreenShot.png)
 
+## Live Demo
+
+https://stormy-plains-21878.herokuapp.com/
+
 ## Built With 🛠
 
 - Mongo
